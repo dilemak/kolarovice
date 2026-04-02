@@ -1,257 +1,55 @@
-<!DOCTYPE HTML>
-<html lang="en">
-<head>
-    <title>Kolarovice - Guest Guide</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        /* --- CSS STYLES --- */
-        body {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            margin: 0;
-            background-color: #f4f9f4;
-            color: #2b3d2b;
-            display: flex;
-            justify-content: center;
-            line-height: 1.5;
-        }
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    margin: 0; background-color: #f4f9f4; color: #2b3d2b;
+    display: flex; justify-content: center; line-height: 1.5;
+}
 
-        #bg {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(135deg, #e8f5e9 0%, #dceddc 100%);
-            z-index: -1;
-        }
+#bg {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(135deg, #e8f5e9 0%, #dceddc 100%);
+    z-index: -1;
+}
 
-        #wrapper {
-            width: 100%;
-            max-width: 480px;
-            padding: 15px;
-        }
+#wrapper { width: 100%; max-width: 480px; padding: 15px; }
 
-        header {
-            text-align: center;
-            padding: 40px 0 20px;
-        }
+header { text-align: center; padding: 40px 0 20px; }
 
-        .logo { font-size: 3.5rem; color: #4caf50; margin-bottom: 10px; }
+nav ul {
+    list-style: none; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+}
 
-        /* Navigation Grid */
-        nav ul {
-            list-style: none; padding: 0;
-            display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
-        }
+nav a, #lang-toggle {
+    display: flex; align-items: center; justify-content: center;
+    width: 100%; padding: 12px; background: white; border-radius: 12px;
+    text-decoration: none; color: #2e7d32; font-weight: bold; font-size: 0.85rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); border: none; cursor: pointer;
+}
 
-        nav li { display: flex; }
+#lang-toggle { background: #e8f5e9; border: 2px solid #4caf50; }
 
-        nav a, #lang-toggle {
-            display: flex; align-items: center; justify-content: center;
-            width: 100%; padding: 12px;
-            background: white; border-radius: 12px;
-            text-decoration: none; color: #2e7d32;
-            font-weight: bold; font-size: 0.85rem;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            border: none; cursor: pointer;
-        }
+article { background: white; border-radius: 20px; padding: 20px; margin-top: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
 
-        /* Language Button Specifics */
-        #lang-toggle {
-            background: #e8f5e9;
-            border: 2px solid #4caf50;
-            color: #1b5e20;
-        }
+h2.major { margin: 0 0 15px; color: #1b5e20; border-bottom: 2px solid #c8e6c9; padding-bottom: 8px; }
 
-        article {
-            background: white; border-radius: 20px;
-            padding: 20px; margin-top: 20px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-        }
+.item-card { background: #f9fff9; border: 1px solid #e0eee0; border-radius: 12px; padding: 15px; margin-bottom: 15px; }
 
-        h2.major {
-            margin: 0 0 15px; color: #1b5e20;
-            border-bottom: 2px solid #c8e6c9;
-            padding-bottom: 8px; font-size: 1.4rem;
-        }
+.shop-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 
-        .item-card {
-            background: #f9fff9; border: 1px solid #e0eee0;
-            border-radius: 12px; padding: 15px; margin-bottom: 15px;
-        }
+.shop-item { background: #f1f8f1; padding: 15px; border-radius: 12px; text-align: center; }
 
-        .map-box { margin-top: 10px; }
-        .map-box a {
-            display: inline-block; color: #4caf50; font-weight: 600;
-            text-decoration: none; margin-right: 10px; font-size: 0.9rem;
-        }
+.homemade-tag { color: #d4a017; font-weight: bold; margin-right: 4px; text-transform: uppercase; font-size: 0.7rem; display: block; }
 
-        .gps {
-            display: block; font-family: monospace; font-size: 0.75rem;
-            color: #88a088; margin-top: 4px;
-        }
+.contact-btns { display: flex; gap: 10px; margin-top: 15px; }
 
-        .shop-grid {
-            display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
-        }
+.c-btn {
+    flex: 1; text-align: center; padding: 12px; border-radius: 10px; color: white;
+    text-decoration: none; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 5px;
+}
 
-        .shop-item {
-            background: #f1f8f1; padding: 15px; border-radius: 12px; text-align: center;
-        }
+.wa { background: #25D366; }
+.vi { background: #7360f2; }
 
-        .shop-item span { font-size: 1.5rem; display: block; }
-        .shop-item strong { font-size: 1.2rem; display: block; margin: 5px 0; }
-        .shop-item small { color: #555; font-size: 0.8rem; }
+footer { text-align: center; padding: 40px 0; color: #88a088; font-size: 0.8rem; }
 
-        .homemade-tag {
-            color: #d4a017; font-weight: bold; margin-right: 3px;
-        }
-
-        .contact-btns { display: flex; gap: 10px; margin-top: 15px; }
-        .c-btn {
-            flex: 1; text-align: center; padding: 12px;
-            border-radius: 10px; color: white; text-decoration: none;
-            font-weight: bold; font-size: 0.9rem; display: flex; align-items: center; justify-content: center; gap: 5px;
-        }
-
-        .wa { background: #25D366; }
-        .vi { background: #7360f2; }
-
-        .book-btn {
-            display: block; background: #2e7d32; color: white;
-            text-align: center; padding: 10px; border-radius: 8px;
-            text-decoration: none; margin-top: 10px; font-weight: bold;
-        }
-
-        footer { text-align: center; padding: 40px 0; color: #88a088; font-size: 0.8rem; }
-        
-        hr { border: 0; border-top: 1px solid #eee; margin: 20px 0; }
-    </style>
-</head>
-<body>
-
-    <div id="bg"></div>
-
-    <div id="wrapper">
-
-        <header id="header">
-            <div class="logo">&#127968;</div>
-            <div class="content">
-                <h1>Kolarovice</h1>
-                <p data-en="Nature escape in the Slovak hills" data-sk="Oddych v prírode na slovenských kopcoch">Nature escape in the Slovak hills</p>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#hikes" data-en="Hikes" data-sk="Turistika">Hikes</a></li>
-                    <li><a href="#shop" data-en="Buy from Us" data-sk="Kúpiť od nás">Buy from Us</a></li>
-                    <li><a href="#stay" data-en="Where to Stay" data-sk="Kde spať">Where to Stay</a></li>
-                    <li><a href="#contact" data-en="Contact" data-sk="Kontakt">Contact</a></li>
-                    <li><button id="lang-toggle" onclick="toggleLang()">SK</button></li>
-                </ul>
-            </nav>
-        </header>
-
-        <div id="main">
-
-            <article id="hikes">
-                <h2 class="major" data-en="Hikes & Views" data-sk="Turistika a výhľady">Hikes & Views</h2>
-                <div class="item-card">
-                    <strong data-en="🏔️ Easy hike: Kýčera" data-sk="🏔️ Ľahká túra: Kýčera">🏔️ Easy hike: Kýčera</strong>
-                    <p data-en="Great views of Malá Fatra National Park." data-sk="Skvelé výhľady na národný park Malá Fatra.">Great views of Malá Fatra National Park.</p>
-                    <div class="map-box">
-                        <a href="https://mapy.com/s/cumazavuta" target="_blank" data-en="Start Point" data-sk="Bod štartu">Start Point</a>
-                    </div>
-                </div>
-            </article>
-
-            <article id="shop">
-                <h2 class="major" data-en="Buy from Us" data-sk="Kúpiť od nás">Buy from Us</h2>
-                <div class="shop-grid">
-                    <div class="shop-item">
-                        <span>🥚</span><strong>3 €</strong>
-                        <small data-en="<span class='homemade-tag'>Homemade</span> Eggs (10pcs)" data-sk="<span class='homemade-tag'>Domáce</span> Vajíčka (10ks)"><span class="homemade-tag">Homemade</span> Eggs (10pcs)</small>
-                    </div>
-                    <div class="shop-item">
-                        <span>🍷</span><strong>4 €</strong>
-                        <small data-en="<span class='homemade-tag'>Homemade</span> Wine (0.7l)" data-sk="<span class='homemade-tag'>Domáce</span> Víno (0.7l)"><span class="homemade-tag">Homemade</span> Wine (0.7l)</small>
-                    </div>
-                </div>
-
-                <h3 style="margin-top:20px" data-en="Local Specialties" data-sk="Miestne špeciality">Local Specialties</h3>
-                <div class="item-card">
-                    <strong data-en="🧀 Traditional Slovak Sheep Cheese" data-sk="🧀 Tradičný slovenský ovčí syr">🧀 Traditional Slovak Sheep Cheese</strong>
-                    <div class="map-box">
-                        <a href="https://mapy.com/s/camedavuto" target="_blank" data-en="Open Map" data-sk="Otvoriť mapu">Open Map</a>
-                        <span class="gps">49.3184786N, 18.5233739E</span>
-                    </div>
-                </div>
-            </article>
-
-            <article id="stay">
-                <h2 class="major" data-en="Where to Stay" data-sk="Kde spať">Where to Stay</h2>
-                <div class="item-card">
-                    <h3 data-en="🌲 Tree house + meadow" data-sk="🌲 Dom na strome + lúka">🌲 Tree house + meadow</h3>
-                    <a class="book-btn" href="https://www.booking.com/hotel/sk/private-meadow-in-the-middle-of-the-forest.html" data-en="Book Now" data-sk="Rezervovať teraz">Book Now</a>
-                </div>
-            </article>
-
-            <article id="contact">
-                <h2 class="major" data-en="Contact" data-sk="Kontakt">Contact</h2>
-                <div class="item-card">
-                    <p><strong><i class="fa fa-phone"></i> <span data-en="Phone:" data-sk="Telefón:">Phone:</span></strong> <a href="tel:+421911990754">+421 911 990 754</a></p>
-                    <p><strong><i class="fa fa-envelope"></i> Email:</strong> <a href="mailto:sibircan@gmail.com">sibircan@gmail.com</a></p>
-                    <p style="font-size: 0.8rem; color: #666;">
-                        <span data-en="Backup number:" data-sk="Záložné číslo:">Backup number:</span> +421 908 401 616
-                    </p>
-                </div>
-
-                <div class="contact-btns">
-                    <a href="https://wa.me/421911990754" class="c-btn wa"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-                    <a href="viber://chat?number=421911990754" class="c-btn vi"><i class="fab fa-viber"></i> Viber</a>
-                </div>
-
-                <hr>
-
-                <h3 data-en="About Me" data-sk="O mne">About Me</h3>
-                <p><strong><span data-en="Nature Enthusiast | 31 | Here to Help ✨" data-sk="Milovník prírody | 31 | Som tu pre vás ✨">Nature Enthusiast | 31 | Here to Help ✨</span></strong></p>
-                <p data-en="Welcome to the calm of the Slovak countryside! I’m a true hiker and traveler who loves low-cost camping, which is exactly why I started opening up my place to you. Whether you need help setting up your camp or just need some local advice, I’m always available to talk and assist with anything you need." 
-                   data-sk="Vitajte v pokoji slovenskej prírody! Som vášnivý turista a cestovateľ, ktorý obľubuje nízkonákladové kempovanie, čo je presne dôvod, prečo som sa rozhodol sprístupniť svoje miesto aj vám. Či už potrebujete pomôcť s rozložením kempu alebo hľadáte miestne tipy, som vám vždy k dispozícii.">
-                    Welcome to the calm of the Slovak countryside! I’m a true hiker and traveler who loves low-cost camping, which is exactly why I started opening up my place to you. Whether you need help setting up your camp or just need some local advice, I’m always available to talk and assist with anything you need.
-                </p>
-            </article>
-
-        </div>
-
-        <footer>
-            <p>© Kolarovice Guide</p>
-        </footer>
-
-    </div>
-
-    <script>
-        // Smooth Scroll Logic
-        document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                const targetId = this.getAttribute('href');
-                if (targetId.startsWith('#')) {
-                    e.preventDefault();
-                    document.querySelector(targetId).scrollIntoView({ behavior: 'smooth' });
-                }
-            });
-        });
-
-        // Language Toggle Logic
-        let currentLang = 'en';
-        function toggleLang() {
-            currentLang = currentLang === 'en' ? 'sk' : 'en';
-            const btn = document.getElementById('lang-toggle');
-            btn.textContent = currentLang === 'en' ? 'SK' : 'EN';
-            
-            document.querySelectorAll('[data-en]').forEach(el => {
-                const text = el.getAttribute('data-' + currentLang);
-                if (text) { el.innerHTML = text; }
-            });
-            document.documentElement.lang = currentLang;
-        }
-    </script>
-</body>
-</html>
+hr { border: 0; border-top: 1px solid #eee; margin: 20px 0; }
