@@ -1,2 +1,1 @@
-# kolarovice
-Overview and tips for booking guests
+# dilemak.github.io
