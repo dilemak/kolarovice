@@ -1,250 +1,55 @@
-/* General Reset & Layout */
 body {
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    margin: 0;
-    background-color: #f4f9f4;
-    color: #2b3d2b;
-    display: flex;
-    justify-content: center;
-    line-height: 1.5;
+    margin: 0; background-color: #f4f9f4; color: #2b3d2b;
+    display: flex; justify-content: center; line-height: 1.5;
 }
 
 #bg {
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
     background: linear-gradient(135deg, #e8f5e9 0%, #dceddc 100%);
     z-index: -1;
 }
 
-#wrapper {
-    width: 100%;
-    max-width: 480px; /* Mobile-centric view */
-    padding: 15px;
-}
+#wrapper { width: 100%; max-width: 480px; padding: 15px; }
 
-/* Header & Logo */
-header {
-    text-align: center;
-    padding: 40px 0 20px;
-}
+header { text-align: center; padding: 40px 0 20px; }
 
-.logo { 
-    font-size: 3.5rem; 
-    color: #4caf50; 
-    margin-bottom: 10px; 
-}
-
-/* Navigation Grid */
 nav ul {
-    list-style: none; 
-    padding: 0;
-    display: grid; 
-    grid-template-columns: 1fr 1fr; 
-    gap: 10px;
-}
-
-nav li {
-    display: flex;
+    list-style: none; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
 }
 
 nav a, #lang-toggle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    padding: 12px;
-    background: white; 
-    border-radius: 12px;
-    text-decoration: none; 
-    color: #2e7d32;
-    font-weight: bold; 
-    font-size: 0.85rem;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    border: none;
-    cursor: pointer;
-    transition: transform 0.1s ease;
+    display: flex; align-items: center; justify-content: center;
+    width: 100%; padding: 12px; background: white; border-radius: 12px;
+    text-decoration: none; color: #2e7d32; font-weight: bold; font-size: 0.85rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); border: none; cursor: pointer;
 }
 
-nav a:active, #lang-toggle:active {
-    transform: scale(0.95);
-}
+#lang-toggle { background: #e8f5e9; border: 2px solid #4caf50; }
 
-/* Specific Language Toggle Style */
-#lang-toggle {
-    background: #e8f5e9;
-    border: 2px solid #4caf50;
-    color: #1b5e20;
-}
+article { background: white; border-radius: 20px; padding: 20px; margin-top: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
 
-/* Content Articles */
-article {
-    background: white; 
-    border-radius: 20px;
-    padding: 20px; 
-    margin-top: 20px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-}
+h2.major { margin: 0 0 15px; color: #1b5e20; border-bottom: 2px solid #c8e6c9; padding-bottom: 8px; }
 
-h2.major {
-    margin: 0 0 15px; 
-    color: #1b5e20;
-    border-bottom: 2px solid #c8e6c9;
-    padding-bottom: 8px; 
-    font-size: 1.4rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
+.item-card { background: #f9fff9; border: 1px solid #e0eee0; border-radius: 12px; padding: 15px; margin-bottom: 15px; }
 
-h3.major {
-    color: #2e7d32;
-    font-size: 1.1rem;
-    margin-top: 1.5rem;
-    margin-bottom: 10px;
-}
+.shop-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 
-/* Item Cards */
-.item-card {
-    background: #f9fff9; 
-    border: 1px solid #e0eee0;
-    border-radius: 12px; 
-    padding: 15px; 
-    margin-bottom: 15px;
-}
+.shop-item { background: #f1f8f1; padding: 15px; border-radius: 12px; text-align: center; }
 
-.item-card p {
-    margin: 10px 0;
-}
+.homemade-tag { color: #d4a017; font-weight: bold; margin-right: 4px; text-transform: uppercase; font-size: 0.7rem; display: block; }
 
-/* Maps & Links */
-.map-box { 
-    margin-top: 12px; 
-}
-
-.map-box a {
-    display: inline-block; 
-    color: #4caf50; 
-    font-weight: 600;
-    text-decoration: none; 
-    margin-right: 15px; 
-    font-size: 0.9rem;
-}
-
-.gps {
-    display: block; 
-    font-family: monospace; 
-    font-size: 0.75rem;
-    color: #88a088; 
-    margin-top: 6px;
-}
-
-/* Shop Grid */
-.shop-grid {
-    display: grid; 
-    grid-template-columns: 1fr 1fr; 
-    gap: 12px;
-}
-
-.shop-item {
-    background: #f1f8f1; 
-    padding: 15px; 
-    border-radius: 12px; 
-    text-align: center;
-    border: 1px solid #dceddc;
-}
-
-.shop-item span { font-size: 1.6rem; display: block; }
-.shop-item strong { font-size: 1.2rem; display: block; margin: 5px 0; color: #1b5e20; }
-.shop-item small { color: #555; font-size: 0.8rem; display: block; }
-
-/* Homemade Tag Style */
-.homemade-tag {
-    background: #ffcc00;
-    color: #333;
-    font-size: 0.65rem;
-    font-weight: bold;
-    padding: 2px 6px;
-    border-radius: 4px;
-    display: inline-block;
-    margin-bottom: 4px;
-    text-transform: uppercase;
-}
-
-/* Contact Section & Buttons */
-.contact-label { 
-    text-align: center; 
-    margin-top: 25px; 
-    font-weight: bold; 
-    color: #2e7d32;
-}
-
-.contact-btns { 
-    display: flex; 
-    gap: 10px; 
-    margin-top: 15px; 
-}
+.contact-btns { display: flex; gap: 10px; margin-top: 15px; }
 
 .c-btn {
-    flex: 1; 
-    text-align: center; 
-    padding: 14px;
-    border-radius: 12px; 
-    color: white; 
-    text-decoration: none;
-    font-weight: bold; 
-    font-size: 0.9rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
+    flex: 1; text-align: center; padding: 12px; border-radius: 10px; color: white;
+    text-decoration: none; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 5px;
 }
 
 .wa { background: #25D366; }
 .vi { background: #7360f2; }
 
-/* Links in Contact Card */
-#contact a {
-    color: #2e7d32;
-    text-decoration: none;
-    font-weight: 600;
-}
+footer { text-align: center; padding: 40px 0; color: #88a088; font-size: 0.8rem; }
 
-#contact hr {
-    border: 0;
-    border-top: 1px solid #e0eee0;
-    margin: 25px 0;
-}
-
-/* Booking Buttons */
-.book-btn {
-    display: block; 
-    background: #2e7d32; 
-    color: white;
-    text-align: center; 
-    padding: 12px; 
-    border-radius: 10px;
-    text-decoration: none; 
-    margin-top: 10px; 
-    font-weight: bold;
-    transition: background 0.2s;
-}
-
-.book-btn:hover {
-    background: #1b5e20;
-}
-
-/* Footer */
-footer { 
-    text-align: center; 
-    padding: 50px 0; 
-    color: #88a088; 
-    font-size: 0.85rem; 
-}
-
-/* Map Iframe */
-.map-iframe {
-    width: 100%; 
-    height: 250px; 
-    border-radius: 12px; 
-    margin-bottom: 15px;
-    border: none;
-}
+hr { border: 0; border-top: 1px solid #eee; margin: 20px 0; }
