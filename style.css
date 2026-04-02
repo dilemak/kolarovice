@@ -1,5 +1,7 @@
+
 <!-- ================= style.css ================= -->
-<style>
+/* keep your original style + only add lang switch */
+
 .lang-switch {
     position: absolute;
     top: 10px;
@@ -9,9 +11,9 @@
 .lang-switch button {
     background: white;
     border: none;
-    padding: 5px 8px;
+    padding: 6px 8px;
     margin-left: 5px;
-    border-radius: 6px;
-    font-weight: bold;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    cursor: pointer;
 }
-</style>
