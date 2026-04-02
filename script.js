@@ -15,7 +15,8 @@ let currentLang = 'en';
 function toggleLang() {
     currentLang = currentLang === 'en' ? 'sk' : 'en';
     const btn = document.getElementById('lang-toggle');
-    btn.textContent = currentLang === 'en' ? 'SK' : 'EN';
+    // Show flag + code: when showing EN button, user is currently in SK mode, and vice versa
+    btn.textContent = currentLang === 'en' ? '\uD83C\uDDF8\uD83C\uDDF0 SK' : '\uD83C\uDDEC\uD83C\uDDE7 EN';
     btn.classList.toggle('active', currentLang === 'sk');
     document.querySelectorAll('[data-en]').forEach(el => {
         el.textContent = el.getAttribute('data-' + currentLang);
