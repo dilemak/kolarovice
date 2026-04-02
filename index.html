@@ -1,3 +1,4 @@
+<!-- ================= index.html ================= -->
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
@@ -9,95 +10,99 @@
 </head>
 <body>
 
-    <div id="bg"></div>
+<div id="wrapper">
 
-    <div id="wrapper">
-
-        <header id="header">
-            <div class="logo">🌲</div>
-            <div class="content">
-                <h1>Kolarovice</h1>
-                <p data-en="Nature escape in the Slovak hills" data-sk="Oddych v prírode na slovenských kopcoch">Nature escape in the Slovak hills</p>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#shop" data-en="Shop" data-sk="Obchod">Shop</a></li>
-                    <li><a href="#stay" data-en="Stay" data-sk="Pobyt">Stay</a></li>
-                    <li><a href="#contact" data-en="Contact" data-sk="Kontakt">Contact</a></li>
-                    <li><button id="lang-toggle" onclick="toggleLang()">SK</button></li>
-                </ul>
-            </nav>
-        </header>
-
-        <div id="main">
-
-            <article id="shop">
-                <h2 class="major" data-en="Buy from Us" data-sk="Kúpiť od nás">Buy from Us</h2>
-                <div class="shop-grid">
-                    <div class="shop-item">
-                        <span class="homemade-tag">Homemade</span>
-                        <span>🥚</span>
-                        <strong>3 €</strong>
-                        <small data-en="Eggs (10pcs)" data-sk="Vajíčka (10ks)">Eggs (10pcs)</small>
-                    </div>
-                    <div class="shop-item">
-                        <span class="homemade-tag">Homemade</span>
-                        <span>🍷</span>
-                        <strong>4 €</strong>
-                        <small data-en="Wine (0.7l)" data-sk="Víno (0.7l)">Wine (0.7l)</small>
-                    </div>
-                </div>
-
-                <h3 style="margin-top:20px; color:#1b5e20;" data-en="Local Specialties" data-sk="Miestne špeciality">Local Specialties</h3>
-                <div class="item-card">
-                    <strong data-en="🧀 Traditional Slovak Sheep Cheese" data-sk="🧀 Tradičný slovenský ovčí syr">🧀 Traditional Slovak Sheep Cheese</strong>
-                    <div class="map-box" style="margin-top:10px;">
-                        <a href="https://mapy.com/s/camedavuto" target="_blank" style="color:#4caf50; font-weight:bold; text-decoration:none;" data-en="View on map" data-sk="Zobraziť na mape">View on map</a>
-                        <span style="display:block; font-size:0.7rem; color:#88a088; margin-top:5px;">49.3184786N, 18.5233739E</span>
-                    </div>
-                </div>
-            </article>
-
-            <article id="stay">
-                <h2 class="major" data-en="Where to Stay" data-sk="Kde spať">Where to Stay</h2>
-                <div class="item-card">
-                    <h3 data-en="🌲 Tree house + private meadow" data-sk="🌲 Dom na strome + súkromná lúka">🌲 Tree house + private meadow</h3>
-                    <a href="https://www.booking.com/hotel/sk/private-meadow-in-the-middle-of-the-forest.html" target="_blank" 
-                       style="display:block; background:#2e7d32; color:white; text-align:center; padding:12px; border-radius:10px; text-decoration:none; margin-top:10px; font-weight:bold;"
-                       data-en="Book on Booking.com" data-sk="Rezervovať na Booking.com">Book on Booking.com</a>
-                </div>
-            </article>
-
-            <article id="contact">
-                <h2 class="major" data-en="Contact" data-sk="Kontakt">Contact</h2>
-                <div class="item-card">
-                    <p><strong><i class="fa fa-phone"></i> <span data-en="Phone:" data-sk="Telefón:">Phone:</span></strong> <a href="tel:+421911990754" style="color:#2e7d32; text-decoration:none;">+421 911 990 754</a></p>
-                    <p><strong><i class="fa fa-envelope"></i> Email:</strong> <a href="mailto:sibircan@gmail.com" style="color:#2e7d32; text-decoration:none;">sibircan@gmail.com</a></p>
-                </div>
-
-                <div class="contact-btns">
-                    <a href="https://wa.me/421911990754" class="c-btn wa"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-                    <a href="viber://chat?number=421911990754" class="c-btn vi"><i class="fab fa-viber"></i> Viber</a>
-                </div>
-
-                <hr>
-
-                <h3 data-en="About Me" data-sk="O mne">About Me</h3>
-                <p><strong><span data-en="Nature Enthusiast | 31 | Here to Help ✨" data-sk="Milovník prírody | 31 | Som tu pre vás ✨">Nature Enthusiast | 31 | Here to Help ✨</span></strong></p>
-                <p data-en="Welcome! I’m a hiker and traveler who loves low-cost camping. Whether you need help setting up your camp or just need local advice, I’m always available to assist." 
-                   data-sk="Vitajte! Som turista a cestovateľ, ktorý miluje nízkonákladové kempovanie. Či už potrebujete pomôcť s rozložením kempu alebo hľadáte miestne rady, som vám vždy k dispozícii.">
-                    Welcome! I’m a hiker and traveler who loves low-cost camping. Whether you need help setting up your camp or just need local advice, I’m always available to assist.
-                </p>
-            </article>
-
-        </div>
-
-        <footer>
-            <p data-en="© Kolarovice Guide. Nature first." data-sk="© Sprievodca Kolarovice. Príroda na prvom mieste.">© Kolarovice Guide. Nature first.</p>
-        </footer>
-
+<header id="header">
+    <div class="lang-switch">
+        <button onclick="setLang('en')">EN</button>
+        <button onclick="setLang('sk')">SK</button>
     </div>
 
-    <script src="script.js"></script>
+    <div class="logo">🏔️</div>
+    <div class="content">
+        <h1>Kolarovice</h1>
+        <p>Nature escape in the Slovak hills</p>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="#hikes">Hikes</a></li>
+            <li><a href="#shop">Buy from Us</a></li>
+            <li><a href="#stay">Where to Stay</a></li>
+            <li><a href="#local">Local Area</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div id="main">
+
+<!-- SHOP UPDATE -->
+<article id="shop">
+    <h2 class="major">Buy from Us</h2>
+
+    <div class="item-card">
+        <strong>🧀 Traditional Slovak Sheep Cheese</strong>
+        <div class="map-box">
+            <a href="https://mapy.com/s/camedavuto" target="_blank">View on map</a>
+            <span class="gps">49.3184786N, 18.5233739E</span>
+        </div>
+    </div>
+
+    <div class="shop-grid">
+        <div class="shop-item"><span>🪵</span><strong>2 €</strong><small>Firewood</small></div>
+        <div class="shop-item"><span>🥚</span><strong>3 €</strong><small>Homemade Eggs (10pcs)</small></div>
+        <div class="shop-item"><span>🍷</span><strong>4 €</strong><small>Homemade Wine (0.7l)</small></div>
+        <div class="shop-item"><span>⚡</span><strong>5 €</strong><small>Electric / day</small></div>
+    </div>
+
+    <p class="contact-label">Order via WhatsApp or Viber:</p>
+    <div class="contact-btns">
+        <a href="https://wa.me/421911990754" class="c-btn wa"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        <a href="viber://chat?number=421911990754" class="c-btn vi"><i class="fab fa-viber"></i> Viber</a>
+    </div>
+</article>
+
+<!-- CONTACT SECTION -->
+<article id="contact">
+    <h2 class="major">Contact</h2>
+
+    <div class="item-card">
+        <p><strong>📞 Phone:</strong> +421911990754</p>
+        <p><strong>📞 Backup:</strong> +421908401616</p>
+        <p><strong>✉️ Email:</strong> sibircan@gmail.com</p>
+
+        <div class="contact-btns">
+            <a href="https://wa.me/421911990754" class="c-btn wa"><i class="fab fa-whatsapp"></i></a>
+            <a href="viber://chat?number=421911990754" class="c-btn vi"><i class="fab fa-viber"></i></a>
+        </div>
+    </div>
+</article>
+
+<!-- ABOUT ME -->
+<article id="about">
+    <h2 class="major">About Me</h2>
+    <div class="item-card">
+        <p><strong>Nature Enthusiast | 31 | Here to Help ✨</strong></p>
+        <p>
+        Welcome to the calm of the Slovak countryside! I’m a true hiker and traveler who loves low-cost camping,
+        which is exactly why I started opening up my place to you. Whether you need help setting up your camp or
+        just need some local advice, I’m always available to talk and assist with anything you need.
+        </p>
+        <p>
+        My goal is to make sure you enjoy the nature of Kolárovice and have a peaceful, relaxing stay.
+        </p>
+    </div>
+</article>
+
+</div>
+
+<footer id="footer">
+    <p>© Kolarovice Guide. Nature first.</p>
+</footer>
+
+</div>
+
+<div id="bg"></div>
+<script src="script.js"></script>
 </body>
 </html>
