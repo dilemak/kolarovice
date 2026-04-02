@@ -6,6 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* This section ensures the language switch is visible and styled */
+        #lang-toggle {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid #ffffff;
+            color: #ffffff;
+            padding: 5px 15px;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            margin-left: 10px;
+        }
+
+        #lang-toggle:hover {
+            background: #ffffff;
+            color: #000000;
+        }
+
+        nav ul {
+            display: flex;
+            align-items: center;
+            list-style: none;
+        }
+        
+        .homemade-tag {
+            color: #ffcc00;
+            font-weight: bold;
+            margin-right: 4px;
+        }
+    </style>
 </head>
 <body>
 
@@ -20,7 +53,7 @@
             <nav>
                 <ul>
                     <li><a href="#hikes" data-en="Hikes" data-sk="Turistika">Hikes</a></li>
-                    <li><a href="#shop" data-en="Buy from Us" data-sk="Kúp od nás">Buy from Us</a></li>
+                    <li><a href="#shop" data-en="Buy from Us" data-sk="Kúpiť od nás">Buy from Us</a></li>
                     <li><a href="#stay" data-en="Where to Stay" data-sk="Kde spať">Where to Stay</a></li>
                     <li><a href="#local" data-en="Local Area" data-sk="Okolie">Local Area</a></li>
                     <li><a href="#contact" data-en="Contact" data-sk="Kontakt">Contact</a></li>
@@ -40,24 +73,8 @@
                     <p data-en="Go to Start, then go directly to the Kýčera summit. During good weather you can see from peak a national park Malá Fatra and hill Rozsutec" data-sk="Choďte na Štart, potom priamo na vrchol Kýčery. Za dobrého počasia vidno Malú Fatru a vrch Rozsutec.">Go to Start, then go directly to the Kýčera summit. During good weather you can see from peak a national park Malá Fatra and hill Rozsutec</p>
                     <div class="map-box">
                         <a href="https://mapy.com/s/cumazavuta" target="_blank" data-en="View on map (Start)" data-sk="Zobraziť na mape (Štart)">View on map (Start)</a>
-                        <span class="gps">49.2992832N, 18.5056206E</span>
-                    </div>
-                    <div class="map-box">
-                        <a href="https://mapy.com/s/kedadafale" target="_blank" data-en="View on map (Summit)" data-sk="Zobraziť na mape (Vrchol)">View on map (Summit)</a>
-                        <span class="gps">49.2977205N, 18.5084921E</span>
                     </div>
                 </div>
-
-                <div class="item-card">
-                    <strong data-en="&#127956; Old settlement: Greguše" data-sk="&#127956; Stará osada: Greguše">&#127956; Old settlement: Greguše </strong>
-                    <p data-en="Great hike with beautiful views." data-sk="Skvelá túra s krásnymi výhľadmi.">Great hike with beautiful views.</p>
-                    <div class="map-box">
-                        <a href="https://mapy.com/s/badosuzozu" target="_blank" data-en="View on map (Summit)" data-sk="Zobraziť na mape (Vrchol)">View on map (Summit)</a>
-                        <span class="gps">49.3363769N, 18.4583286E</span>
-                    </div>
-                </div>
-
-                <p data-en="Reachable by car up to 20 min from the property." data-sk="Dostupné autom do 20 minút od chaty.">Reachable by car up to 20 min from the property.</p>
 
                 <div class="item-card">
                     <strong data-en="&#127956; Súľovské Skaly" data-sk="&#127956; Súľovské skaly">&#127956; Súľovské Skaly</strong>
@@ -69,11 +86,11 @@
             </article>
 
             <article id="shop">
-                <h2 class="major" data-en="Buy from Us" data-sk="Kúp nás">Buy from Us</h2>
+                <h2 class="major" data-en="Buy from Us" data-sk="Kúpiť od nás">Buy from Us</h2>
                 <div class="shop-grid">
                     <div class="shop-item"><span>&#129717;</span><strong>2 €</strong><small data-en="Firewood" data-sk="Drevo na oheň">Firewood</small></div>
-                    <div class="shop-item"><span>&#129428;</span><strong>3 €</strong><small data-en="Homemade Eggs (10pcs)" data-sk="Domáce vajíčka (10ks)">Homemade Eggs (10pcs)</small></div>
-                    <div class="shop-item"><span>&#127863;</span><strong>4 €</strong><small data-en="Homemade Wine (0.7l)" data-sk="Domáce víno (0.7l)">Homemade Wine (0.7l)</small></div>
+                    <div class="shop-item"><span>&#129428;</span><strong>3 €</strong><small><span class="homemade-tag">Homemade</span> <span data-en="Eggs (10pcs)" data-sk="Vajíčka (10ks)">Eggs (10pcs)</span></small></div>
+                    <div class="shop-item"><span>&#127863;</span><strong>4 €</strong><small><span class="homemade-tag">Homemade</span> <span data-en="Wine (0.7l)" data-sk="Víno (0.7l)">Wine (0.7l)</span></small></div>
                     <div class="shop-item"><span>&#9889;</span><strong>5 €</strong><small data-en="Electric / day" data-sk="Elektrina / deň">Electric / day</small></div>
                 </div>
 
@@ -99,10 +116,6 @@
                     <h3 data-en="&#127956; Tree house + private meadow in forest" data-sk="&#127956; Dom na strome + súkromná lúka v lese">&#127956; Tree house + private meadow in forest </h3>
                     <a class="book-btn" href="https://www.booking.com/hotel/sk/private-meadow-in-the-middle-of-the-forest.html" data-en="Book on Booking.com" data-sk="Rezervovať na Booking.com">Book on Booking.com</a>
                 </div>
-                <div class="item-card">
-                    <h3 data-en="&#128652; Bed in Bus" data-sk="&#128652; Spanie v autobuse">&#128652; Bed in Bus</h3>
-                    <a class="book-btn" href="https://www.booking.com/hotel/sk/bed-in-bus.html" data-en="Book on Booking.com" data-sk="Rezervovať na Booking.com">Book on Booking.com</a>
-                </div>
             </article>
 
             <article id="local">
@@ -111,12 +124,6 @@
                     <strong data-en="&#128717; Shop: Coop Jednota" data-sk="&#128717; Obchod: Coop Jednota">&#128717; Shop: Coop Jednota</strong>
                     <div class="map-box">
                         <a href="https://mapy.com/s/lecezubepo" target="_blank" data-en="View on map" data-sk="Zobraziť na mape">View on map</a>
-                    </div>
-                </div>
-                <div class="item-card">
-                    <strong data-en="&#127944; Melocík Restaurant" data-sk="&#127944; Reštaurácia Melocík">&#127944; Melocík Restaurant</strong>
-                    <div class="map-box">
-                        <a href="https://mapy.com/s/pebohozuhe" target="_blank" data-en="View on map" data-sk="Zobraziť na mape">View on map</a>
                     </div>
                 </div>
             </article>
@@ -129,7 +136,7 @@
                     <p><strong><i class="fa fa-envelope"></i> <span data-en="Email:" data-sk="E-mail:">Email:</span></strong> <a href="mailto:sibircan@gmail.com">sibircan@gmail.com</a></p>
                     <p style="font-size: 0.9rem; opacity: 0.8;">
                         <i class="fa fa-life-ring"></i> 
-                        <span data-en="Backup (if unavailable):" data-sk="Záložné číslo (v prípade nedostupnosti):">Backup (if unavailable):</span> 
+                        <span data-en="Backup (if unavailable):" data-sk="Záložné číslo (v prípade nedostupnosti):">Backup:</span> 
                         <a href="tel:+421908401616">+421 908 401 616</a>
                     </p>
                 </div>
@@ -164,17 +171,24 @@
 
         function toggleLang() {
             const btn = document.getElementById('lang-toggle');
-            const elements = document.querySelectorAll('[data-en]');
+            const enElements = document.querySelectorAll('[data-en]');
             
             if (currentLang === 'en') {
-                elements.forEach(el => {
-                    el.innerText = el.getAttribute('data-sk');
+                enElements.forEach(el => {
+                    // Try to find if there's a specific data-sk to use
+                    const skText = el.getAttribute('data-sk');
+                    if (skText) {
+                        el.innerText = skText;
+                    }
                 });
                 btn.innerText = 'EN';
                 currentLang = 'sk';
             } else {
-                elements.forEach(el => {
-                    el.innerText = el.getAttribute('data-en');
+                enElements.forEach(el => {
+                    const enText = el.getAttribute('data-en');
+                    if (enText) {
+                        el.innerText = enText;
+                    }
                 });
                 btn.innerText = 'SK';
                 currentLang = 'en';
