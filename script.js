@@ -9,4 +9,18 @@ document.querySelectorAll('nav a').forEach(anchor => {
     });
 });
 
+// Language toggle
+let currentLang = 'en';
+
+function toggleLang() {
+    currentLang = currentLang === 'en' ? 'sk' : 'en';
+    const btn = document.getElementById('lang-toggle');
+    btn.textContent = currentLang === 'en' ? 'SK' : 'EN';
+    btn.classList.toggle('active', currentLang === 'sk');
+    document.querySelectorAll('[data-en]').forEach(el => {
+        el.textContent = el.getAttribute('data-' + currentLang);
+    });
+    document.documentElement.lang = currentLang;
+}
+
 console.log("Kolarovice Guide Loaded.");
