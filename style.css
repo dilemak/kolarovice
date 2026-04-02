@@ -1,19 +1,131 @@
-
-<!-- ================= style.css ================= -->
-/* keep your original style + only add lang switch */
-
-.lang-switch {
-    position: absolute;
-    top: 10px;
-    right: 10px;
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f9f4;
+    color: #2b3d2b;
+    display: flex;
+    justify-content: center;
 }
 
-.lang-switch button {
-    background: white;
-    border: none;
-    padding: 6px 8px;
-    margin-left: 5px;
-    border-radius: 8px;
-    font-size: 0.75rem;
+#bg {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(135deg, #e8f5e9 0%, #dceddc 100%);
+    z-index: -1;
+}
+
+#wrapper {
+    width: 100%;
+    max-width: 480px; /* Forces mobile-centric center view */
+    padding: 15px;
+}
+
+header {
+    text-align: center;
+    padding: 40px 0 20px;
+}
+
+.logo { font-size: 3.5rem; color: #4caf50; margin-bottom: 10px; }
+
+nav ul {
+    list-style: none; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+}
+
+nav a {
+    display: block; padding: 12px;
+    background: white; border-radius: 12px;
+    text-decoration: none; color: #2e7d32;
+    font-weight: bold; font-size: 0.85rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+article {
+    background: white; border-radius: 20px;
+    padding: 20px; margin-top: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+h2.major {
+    margin: 0 0 15px; color: #1b5e20;
+    border-bottom: 2px solid #c8e6c9;
+    padding-bottom: 8px; font-size: 1.4rem;
+}
+
+.item-card {
+    background: #f9fff9; border: 1px solid #e0eee0;
+    border-radius: 12px; padding: 15px; margin-bottom: 15px;
+}
+
+.map-box { margin-top: 10px; }
+.map-box a {
+    display: inline-block; color: #4caf50; font-weight: 600;
+    text-decoration: none; margin-right: 10px; font-size: 0.9rem;
+}
+
+.gps {
+    display: block; font-family: monospace; font-size: 0.75rem;
+    color: #88a088; margin-top: 4px;
+}
+
+.shop-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+}
+
+.shop-item {
+    background: #f1f8f1; padding: 15px; border-radius: 12px; text-align: center;
+}
+
+.shop-item span { font-size: 1.5rem; display: block; }
+.shop-item strong { font-size: 1.2rem; display: block; margin: 5px 0; }
+.shop-item small { color: #666; font-size: 0.75rem; }
+
+.contact-label { text-align: center; margin-top: 20px; font-weight: bold; }
+
+.contact-btns { display: flex; gap: 10px; margin-top: 10px; }
+.c-btn {
+    flex: 1; text-align: center; padding: 12px;
+    border-radius: 10px; color: white; text-decoration: none;
+    font-weight: bold; font-size: 0.9rem;
+}
+
+.wa { background: #25D366; }
+.vi { background: #7360f2; }
+
+.book-btn {
+    display: block; background: #2e7d32; color: white;
+    text-align: center; padding: 10px; border-radius: 8px;
+    text-decoration: none; margin-top: 10px; font-weight: bold;
+}
+
+.map-iframe {
+    width: 100%; height: 250px; border-radius: 12px; margin-bottom: 15px;
+}
+
+.sub-link { display: block; font-size: 0.75rem; color: #999; margin-top: 5px; }
+
+footer { text-align: center; padding: 40px 0; color: #88a088; font-size: 0.8rem; }
+
+/* Language toggle button */
+#lang-toggle {
+    background: transparent;
+    border: 2px solid #4caf50;
+    color: #4caf50;
+    font-size: 0.85rem;
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 20px;
     cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    letter-spacing: 0.05em;
+}
+
+#lang-toggle:hover {
+    background: #4caf50;
+    color: #fff;
+}
+
+#lang-toggle.active {
+    background: #4caf50;
+    color: #fff;
 }
